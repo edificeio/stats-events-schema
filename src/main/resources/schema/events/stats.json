@@ -1,0 +1,186 @@
+[
+    {
+        "table" : "events.login_events",
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"platform" : "UUID"},
+            {"user_id" : "UUID"}
+        ]
+    },{
+        "table" : "events.access_events",
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"platform" : "UUID"},
+            {"user_id" : "UUID"}
+        ]
+    },{
+        "table" : "events.connector_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"\"connector-type\"" : "VARCHAR(16)"},
+            {"platform" : "UUID"},
+            {"user_id" : "UUID"}
+        ]
+    },{
+        "table" : "events.activation_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"platform" : "UUID"},
+            {"user_id" : "UUID"}
+        ]
+    },{
+        "table" : "events.room_access_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"platform" : "UUID"},
+            {"user_id" : "UUID"}
+        ]
+    },{
+        "table" : "events.room_creation_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"platform" : "UUID"},
+            {"user_id" : "UUID"}
+        ]
+    },{
+        "table" : "events.sms_events" ,
+        "attributes" : [ 
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"platform" : "UUID"},
+            {"user_id" : "UUID"}
+        ]
+    },{
+        "table" : "events.creation_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"resource_type" : "VARCHAR(32)"},
+            {"size" : "BIGINT"},
+            {"platform" : "UUID"},
+            {"user_id" : "UUID"}
+        ]
+    },{
+        "table" : "events.unknown_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"payload" : "JSONB"},
+            {"platform" : "UUID"},
+            {"user_id" : "UUID"}
+        ]
+    },{
+        "table" : "repository.platforms",
+        "attributes" : [
+            {"id" : "UUID PRIMARY KEY"},
+            {"external_id" : "VARCHAR(40)"},
+            {"created" : "TIMESTAMP"},
+            {"modified" : "TIMESTAMP"},
+            {"deleted" : "TIMESTAMP"},
+            {"name" : "VARCHAR(32)  NOT NULL"}
+        ]
+    },{
+        "table" : "repository.tenants",
+        "attributes" : [
+            {"id" : "UUID PRIMARY KEY"},
+            {"external_id" : "VARCHAR(40)"},
+            {"created" : "TIMESTAMP"},
+            {"modified" : "TIMESTAMP"},
+            {"deleted" : "TIMESTAMP"},
+            {"name" : "VARCHAR(32) NOT NULL"},
+            {"platform_id" : "UUID REFERENCES repository.platforms(id)"}
+        ]
+    },{
+        "table" : "repository.structures",
+        "attributes" : [
+            {"id" : "UUID PRIMARY KEY"},
+            {"external_id" : "VARCHAR(40)"},
+            {"UAI" : "VARCHAR(8) NOT NULL"},
+            {"created" : "TIMESTAMP"},
+            {"modified" : "TIMESTAMP"},
+            {"deleted" : "TIMESTAMP"},
+            {"name" : "VARCHAR(32) NOT NULL"},
+            {"source" : "VARCHAR(6)"},
+            {"child_structures" : "UUID []"},
+            {"parent_structures" : "UUID []"},
+            {"platform_id" : "UUID REFERENCES repository.platforms(id)"},
+            {"tenant_id" : "UUID REFERENCES repository.tenants(id)"}
+        ]
+    },{
+        "table" : "repository.classes",
+        "attributes" : [
+            {"id" : "UUID PRIMARY KEY"},
+            {"external_id" : "VARCHAR(40)"},
+            {"created" : "TIMESTAMP"},
+            {"modified" : "TIMESTAMP"},
+            {"deleted" : "TIMESTAMP"},
+            {"name" : "VARCHAR(32)NOT NULL"},
+            {"source" : "VARCHAR(6)"},
+            {"structure_id" : "UUID REFERENCES repository.structures(id)"}
+        ]
+    },{
+        "table" : "repository.users",
+        "attributes" : [
+            {"id" : "UUID PRIMARY KEY"},
+            {"external_id" : "VARCHAR(40)"},
+            {"created" : "TIMESTAMP"},
+            {"modified" : "TIMESTAMP"},
+            {"deleted" : "TIMESTAMP"},
+            {"name" : "VARCHAR(32) NOT NULL"},
+            {"source" : "VARCHAR(6)"},
+            {"profile" : "VARCHAR(9)"},
+            {"activated" : "TIMESTAMP"}
+        ]
+    },{
+        "table" : "repository.users_platforms",
+        "attributes" : [
+            {"user_id" : "UUID REFERENCES repository.users(id)"},
+            {"platform_id" : "UUID REFERENCES repository.platforms(id)"},
+            {"created" : "TIMESTAMP"},
+            {"modified" : "TIMESTAMP"},
+            {"deleted" : "TIMESTAMP, PRIMARY KEY(user_id, platform_id)"}
+        ]
+    },{
+        "table" : "repository.users_tenants",
+        "attributes" : [
+            {"user_id" : "UUID REFERENCES repository.users(id)"},
+            {"tenant_id" : "UUID REFERENCES repository.tenants(id)"},
+            {"created" : "TIMESTAMP"},
+            {"modified" : "TIMESTAMP"},
+            {"deleted" : "TIMESTAMP, PRIMARY KEY(user_id, tenant_id)"}
+        ]
+    },{
+        "table" : "repository.users_structures",
+        "attributes" : [
+            {"user_id" : "UUID REFERENCES repository.users(id)"},
+            {"structure_id" : "UUID REFERENCES repository.structures(id)"},
+            {"created" : "TIMESTAMP"},
+            {"modified" : "TIMESTAMP"},
+            {"deleted" : "TIMESTAMP, PRIMARY KEY(user_id, structure_id)"}
+        ]
+    },{
+        "table" : "repository.users_classes",
+        "attributes" : [
+            {"user_id" : "UUID REFERENCES repository.users(id)"},
+            {"class_id" : "UUID REFERENCES repository.classes(id)"},
+            {"created" : "TIMESTAMP"},
+            {"modified" : "TIMESTAMP"},
+            {"deleted" : "TIMESTAMP, PRIMARY KEY(user_id, class_id)"}
+        ]
+    }
+]
