@@ -5,7 +5,9 @@
             {"profile" : "VARCHAR(9)"},
             {"module" : "VARCHAR(64)"},
             {"event_type" : "VARCHAR(16)"},
-            {"platform" : "VARCHAR(36)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
@@ -14,7 +16,9 @@
             {"profile" : "VARCHAR(9)"},
             {"module" : "VARCHAR(64)"},
             {"event_type" : "VARCHAR(16)"},
-            {"platform" : "VARCHAR(36)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
@@ -24,7 +28,9 @@
             {"module" : "VARCHAR(64)"},
             {"event_type" : "VARCHAR(16)"},
             {"\"connector-type\"" : "VARCHAR(16)"},
-            {"platform" : "VARCHAR(36)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
@@ -33,7 +39,9 @@
             {"profile" : "VARCHAR(9)"},
             {"module" : "VARCHAR(64)"},
             {"event_type" : "VARCHAR(16)"},
-            {"platform" : "VARCHAR(36)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
@@ -42,7 +50,9 @@
             {"profile" : "VARCHAR(9)"},
             {"module" : "VARCHAR(64)"},
             {"event_type" : "VARCHAR(16)"},
-            {"platform" : "VARCHAR(36)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
@@ -51,7 +61,9 @@
             {"profile" : "VARCHAR(9)"},
             {"module" : "VARCHAR(64)"},
             {"event_type" : "VARCHAR(16)"},
-            {"platform" : "VARCHAR(36)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
@@ -60,7 +72,9 @@
             {"profile" : "VARCHAR(9)"},
             {"module" : "VARCHAR(64)"},
             {"event_type" : "VARCHAR(16)"},
-            {"platform" : "VARCHAR(36)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
@@ -71,7 +85,9 @@
             {"event_type" : "VARCHAR(16)"},
             {"resource_type" : "VARCHAR(64)"},
             {"size" : "BIGINT"},
-            {"platform" : "VARCHAR(36)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
@@ -80,8 +96,10 @@
             {"profile" : "VARCHAR(9)"},
             {"module" : "VARCHAR(64)"},
             {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
             {"payload" : "JSONB"},
-            {"platform" : "VARCHAR(36)"},
+            {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
@@ -145,6 +163,7 @@
             {"source" : "VARCHAR(6)"},
             {"profile" : "VARCHAR(9)"},
             {"activated" : "TIMESTAMP"},
+            {"activation_device_type" : "VARCHAR(32)"},
             {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"}
         ]
     },{
@@ -179,6 +198,918 @@
             {"created" : "TIMESTAMP"},
             {"modified" : "TIMESTAMP"},
             {"deleted" : "TIMESTAMP, PRIMARY KEY(user_id, class_id)"}
+        ]
+    },{
+        "table" : "stats.accounts_device_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_device_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9) NOT NULL"},
+            {"device" : "VARCHAR(32)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.accounts_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9) NOT NULL"},
+            {"loaded" : "INTEGER"},
+            {"activated" : "INTEGER"},
+            {"authentications": "INTEGER"},
+            {"unique_visitors": "INTEGER"},
+            {"activations": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_device_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9) NOT NULL"},
+            {"device" : "VARCHAR(32)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
+        ]
+    },{
+        "table" : "stats.access_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9) NOT NULL"},
+            {"type": "VARCHAR(16)"},
+            {"module": "VARCHAR(64)"},
+            {"access": "INTEGER"},
+            {"unique_access_minute": "INTEGER"},
+            {"unique_access": "INTEGER"}
         ]
     }
 ]
