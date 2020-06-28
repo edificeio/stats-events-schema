@@ -104,6 +104,18 @@
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
+        "table" : "events.auth_events" ,
+        "attributes" : [
+            {"external_id" : "VARCHAR(64)"},
+            {"profile" : "VARCHAR(9)"},
+            {"login" : "VARCHAR(64)"},
+            {"password" : "VARCHAR(32)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"sync" : "BOOLEAN"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"}
+        ]
+    },{
         "table" : "repository.platforms",
         "attributes" : [
             {"id" : "VARCHAR(36) PRIMARY KEY"},
@@ -133,7 +145,7 @@
             {"created" : "TIMESTAMP"},
             {"modified" : "TIMESTAMP"},
             {"deleted" : "TIMESTAMP"},
-            {"name" : "VARCHAR(64) NOT NULL"},
+            {"name" : "VARCHAR(128) NOT NULL"},
             {"source" : "VARCHAR(6)"},
             {"child_structures" : "VARCHAR(36) []"},
             {"parent_structures" : "VARCHAR(36) []"},
@@ -208,12 +220,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_platform_days",
@@ -223,12 +235,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_platform_weeks",
@@ -238,12 +250,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_platform_months",
@@ -253,12 +265,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_tenant_hours",
@@ -269,12 +281,12 @@
             {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_tenant_days",
@@ -285,12 +297,12 @@
             {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_tenant_weeks",
@@ -301,12 +313,12 @@
             {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_tenant_months",
@@ -317,12 +329,12 @@
             {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_structure_hours",
@@ -333,12 +345,12 @@
             {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_structure_days",
@@ -349,12 +361,12 @@
             {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_structure_weeks",
@@ -365,12 +377,12 @@
             {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_structure_months",
@@ -381,12 +393,12 @@
             {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_class_hours",
@@ -397,12 +409,12 @@
             {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_class_days",
@@ -413,12 +425,12 @@
             {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_class_weeks",
@@ -429,12 +441,12 @@
             {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
             {"profile" : "VARCHAR(9)"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_class_months",
@@ -445,12 +457,12 @@
             {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
             {"profile" : "VARCHAR(9) NOT NULL"},
             {"device_type" : "VARCHAR(32)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_platform_hours",
@@ -459,12 +471,12 @@
             {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
             {"date" : "TIMESTAMP NOT NULL"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_platform_days",
@@ -473,12 +485,12 @@
             {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
             {"date" : "TIMESTAMP NOT NULL"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_platform_weeks",
@@ -487,12 +499,12 @@
             {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
             {"date" : "TIMESTAMP NOT NULL"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_platform_months",
@@ -501,12 +513,12 @@
             {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
             {"date" : "TIMESTAMP NOT NULL"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_tenant_hours",
@@ -516,12 +528,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_tenant_days",
@@ -531,12 +543,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_tenant_weeks",
@@ -546,12 +558,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_tenant_months",
@@ -561,12 +573,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_structure_hours",
@@ -576,12 +588,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_structure_days",
@@ -591,12 +603,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_structure_weeks",
@@ -606,12 +618,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_structure_months",
@@ -621,12 +633,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_class_hours",
@@ -636,12 +648,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_class_days",
@@ -651,12 +663,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_class_weeks",
@@ -666,12 +678,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
             {"profile" : "VARCHAR(9)"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_class_months",
@@ -681,12 +693,12 @@
             {"date" : "TIMESTAMP NOT NULL"},
             {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
             {"profile" : "VARCHAR(9) NOT NULL"},
-            {"loaded" : "INTEGER"},
-            {"activated" : "INTEGER"},
-            {"authentications": "INTEGER"},
-            {"unique_visitors": "INTEGER"},
-            {"activations": "INTEGER"},
-            {"sessions": "INTEGER"}
+            {"loaded" : "INTEGER DEFAULT 0"},
+            {"activated" : "INTEGER DEFAULT 0"},
+            {"authentications": "INTEGER DEFAULT 0"},
+            {"unique_visitors": "INTEGER DEFAULT 0"},
+            {"activations": "INTEGER DEFAULT 0"},
+            {"sessions": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_platform_hours",
@@ -698,9 +710,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_platform_days",
@@ -712,9 +724,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_platform_weeks",
@@ -726,9 +738,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_platform_months",
@@ -740,9 +752,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_tenant_hours",
@@ -755,9 +767,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_tenant_days",
@@ -770,9 +782,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_tenant_weeks",
@@ -785,9 +797,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_tenant_months",
@@ -800,9 +812,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_structure_hours",
@@ -815,9 +827,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_structure_days",
@@ -830,9 +842,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_structure_weeks",
@@ -845,9 +857,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_structure_months",
@@ -860,9 +872,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_class_hours",
@@ -875,9 +887,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_class_days",
@@ -890,9 +902,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_class_weeks",
@@ -905,9 +917,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_class_months",
@@ -920,9 +932,9 @@
             {"device_type" : "VARCHAR(32)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_platform_hours",
@@ -933,9 +945,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_platform_days",
@@ -946,9 +958,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_platform_weeks",
@@ -959,9 +971,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_platform_months",
@@ -972,9 +984,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_tenant_hours",
@@ -986,9 +998,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_tenant_days",
@@ -1000,9 +1012,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_tenant_weeks",
@@ -1014,9 +1026,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_tenant_months",
@@ -1028,9 +1040,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_structure_hours",
@@ -1042,9 +1054,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_structure_days",
@@ -1056,9 +1068,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_structure_weeks",
@@ -1070,9 +1082,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_structure_months",
@@ -1084,9 +1096,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_class_hours",
@@ -1098,9 +1110,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_class_days",
@@ -1112,9 +1124,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_class_weeks",
@@ -1126,9 +1138,9 @@
             {"profile" : "VARCHAR(9)"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_class_months",
@@ -1140,9 +1152,9 @@
             {"profile" : "VARCHAR(9) NOT NULL"},
             {"type": "VARCHAR(16)"},
             {"module": "VARCHAR(64)"},
-            {"access": "INTEGER"},
-            {"unique_access_minute": "INTEGER"},
-            {"unique_access": "INTEGER"}
+            {"access": "INTEGER DEFAULT 0"},
+            {"unique_access_minute": "INTEGER DEFAULT 0"},
+            {"unique_access": "INTEGER DEFAULT 0"}
         ]
     }
 ]
