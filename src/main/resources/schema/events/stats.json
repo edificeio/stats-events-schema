@@ -109,6 +109,7 @@
             {"external_id" : "VARCHAR(64)"},
             {"profile" : "VARCHAR(9)"},
             {"login" : "VARCHAR(64)"},
+            {"login_alias" : "VARCHAR(64)"},
             {"password" : "VARCHAR(32)"},
             {"event_type" : "VARCHAR(16)"},
             {"sync" : "BOOLEAN"},
