@@ -28,6 +28,7 @@
             {"module" : "VARCHAR(64)"},
             {"event_type" : "VARCHAR(16)"},
             {"\"connector-type\"" : "VARCHAR(16)"},
+            {"service" : "VARCHAR(256)"},
             {"ua": "VARCHAR(256)"},
             {"device_type" : "VARCHAR(32)"},
             {"platform_id" : "VARCHAR(36)"},
