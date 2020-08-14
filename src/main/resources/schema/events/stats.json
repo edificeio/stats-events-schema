@@ -1158,5 +1158,49 @@
             {"unique_access_minute": "INTEGER DEFAULT 0"},
             {"unique_access": "INTEGER DEFAULT 0"}
         ]
+    },{
+        "table" : "external.rep",
+        "attributes" : [
+            {"uai" : "VARCHAR(8) PRIMARY KEY"},
+            {"academie" : "VARCHAR(64)"},
+            {"zone" : "VARCHAR(4)"},
+            {"niveau" : "VARCHAR(64)"},
+            {"nom" : "VARCHAR(64)"},
+            {"commune": "VARCHAR(64)"},
+            {"circonscription": "VARCHAR(64)"}
+        ]
+    },{
+        "table" : "external.etabs",
+        "attributes" : [
+            {"uai" : "VARCHAR(9) PRIMARY KEY"},
+            {"appellation_officielle" : "VARCHAR(256)"},
+            {"denomination_principale" : "VARCHAR(64)"},
+            {"patronyme_uai" : "VARCHAR(64)"},
+            {"secteur" : "VARCHAR(16)"},
+            {"adresse": "VARCHAR(128)"},
+            {"lieu_dit": "VARCHAR(64)"},
+            {"bp" : "VARCHAR(10)"},
+            {"cp" : "VARCHAR(5)"},
+            {"localite_acheminement" : "VARCHAR(64)"},
+            {"commune": "VARCHAR(64)"},
+            {"pays": "VARCHAR(64)"},
+            {"coordonnee_x" : "DOUBLE PRECISION"},
+            {"coordonnee_y" : "DOUBLE PRECISION"},
+            {"epsg" : "VARCHAR(16)"},
+            {"latitude": "VARCHAR(16)"},
+            {"longitude": "VARCHAR(16)"},
+            {"qualite_appariement" : "VARCHAR(16)"},
+            {"localisation" : "VARCHAR(64)"},
+            {"code_nature" : "VARCHAR(5)"},
+            {"nature": "VARCHAR(64)"},
+            {"code_departement": "VARCHAR(5)"},
+            {"code_region" : "VARCHAR(5)"},
+            {"code_academie" : "VARCHAR(5)"},
+            {"code_commune" : "VARCHAR(5)"},
+            {"departement": "VARCHAR(64)"},
+            {"region": "VARCHAR(64)"},
+            {"academie" : "VARCHAR(64)"},
+            {"position" : "VARCHAR(40)"}
+        ]
     }
 ]
