@@ -22,6 +22,19 @@
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
+        "table" : "events.create_events",
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"resource_type" : "VARCHAR(64)"},
+            {"migration_id" : "TEXT"}
+        ]
+    },{
         "table" : "events.connector_events" ,
         "attributes" : [
             {"profile" : "VARCHAR(9)"},
