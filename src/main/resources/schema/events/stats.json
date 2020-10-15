@@ -214,7 +214,8 @@
             {"source" : "VARCHAR(6)"},
             {"created" : "TIMESTAMP"},
             {"modified" : "TIMESTAMP"},
-            {"deleted" : "TIMESTAMP, PRIMARY KEY(user_id, structure_id)"}
+            {"deleted" : "TIMESTAMP"},
+            {"sub_user_level" : "SMALLINT, PRIMARY KEY(user_id, structure_id)"}
         ]
     },{
         "table" : "repository.users_classes",
@@ -365,7 +366,13 @@
             {"authentications": "INTEGER DEFAULT 0"},
             {"unique_visitors": "INTEGER DEFAULT 0"},
             {"activations": "INTEGER DEFAULT 0"},
-            {"sessions": "INTEGER DEFAULT 0"}
+            {"sessions": "INTEGER DEFAULT 0"},
+            {"loaded_wta" : "INTEGER DEFAULT 0"},
+            {"activated_wta" : "INTEGER DEFAULT 0"},
+            {"authentications_wta": "INTEGER DEFAULT 0"},
+            {"unique_visitors_wta": "INTEGER DEFAULT 0"},
+            {"activations_wta": "INTEGER DEFAULT 0"},
+            {"sessions_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_structure_days",
@@ -381,7 +388,13 @@
             {"authentications": "INTEGER DEFAULT 0"},
             {"unique_visitors": "INTEGER DEFAULT 0"},
             {"activations": "INTEGER DEFAULT 0"},
-            {"sessions": "INTEGER DEFAULT 0"}
+            {"sessions": "INTEGER DEFAULT 0"},
+            {"loaded_wta" : "INTEGER DEFAULT 0"},
+            {"activated_wta" : "INTEGER DEFAULT 0"},
+            {"authentications_wta": "INTEGER DEFAULT 0"},
+            {"unique_visitors_wta": "INTEGER DEFAULT 0"},
+            {"activations_wta": "INTEGER DEFAULT 0"},
+            {"sessions_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_structure_weeks",
@@ -397,7 +410,13 @@
             {"authentications": "INTEGER DEFAULT 0"},
             {"unique_visitors": "INTEGER DEFAULT 0"},
             {"activations": "INTEGER DEFAULT 0"},
-            {"sessions": "INTEGER DEFAULT 0"}
+            {"sessions": "INTEGER DEFAULT 0"},
+            {"loaded_wta" : "INTEGER DEFAULT 0"},
+            {"activated_wta" : "INTEGER DEFAULT 0"},
+            {"authentications_wta": "INTEGER DEFAULT 0"},
+            {"unique_visitors_wta": "INTEGER DEFAULT 0"},
+            {"activations_wta": "INTEGER DEFAULT 0"},
+            {"sessions_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_structure_months",
@@ -413,7 +432,13 @@
             {"authentications": "INTEGER DEFAULT 0"},
             {"unique_visitors": "INTEGER DEFAULT 0"},
             {"activations": "INTEGER DEFAULT 0"},
-            {"sessions": "INTEGER DEFAULT 0"}
+            {"sessions": "INTEGER DEFAULT 0"},
+            {"loaded_wta" : "INTEGER DEFAULT 0"},
+            {"activated_wta" : "INTEGER DEFAULT 0"},
+            {"authentications_wta": "INTEGER DEFAULT 0"},
+            {"unique_visitors_wta": "INTEGER DEFAULT 0"},
+            {"activations_wta": "INTEGER DEFAULT 0"},
+            {"sessions_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_device_class_hours",
@@ -608,7 +633,13 @@
             {"authentications": "INTEGER DEFAULT 0"},
             {"unique_visitors": "INTEGER DEFAULT 0"},
             {"activations": "INTEGER DEFAULT 0"},
-            {"sessions": "INTEGER DEFAULT 0"}
+            {"sessions": "INTEGER DEFAULT 0"},
+            {"loaded_wta" : "INTEGER DEFAULT 0"},
+            {"activated_wta" : "INTEGER DEFAULT 0"},
+            {"authentications_wta": "INTEGER DEFAULT 0"},
+            {"unique_visitors_wta": "INTEGER DEFAULT 0"},
+            {"activations_wta": "INTEGER DEFAULT 0"},
+            {"sessions_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_structure_days",
@@ -623,7 +654,13 @@
             {"authentications": "INTEGER DEFAULT 0"},
             {"unique_visitors": "INTEGER DEFAULT 0"},
             {"activations": "INTEGER DEFAULT 0"},
-            {"sessions": "INTEGER DEFAULT 0"}
+            {"sessions": "INTEGER DEFAULT 0"},
+            {"loaded_wta" : "INTEGER DEFAULT 0"},
+            {"activated_wta" : "INTEGER DEFAULT 0"},
+            {"authentications_wta": "INTEGER DEFAULT 0"},
+            {"unique_visitors_wta": "INTEGER DEFAULT 0"},
+            {"activations_wta": "INTEGER DEFAULT 0"},
+            {"sessions_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_structure_weeks",
@@ -638,7 +675,13 @@
             {"authentications": "INTEGER DEFAULT 0"},
             {"unique_visitors": "INTEGER DEFAULT 0"},
             {"activations": "INTEGER DEFAULT 0"},
-            {"sessions": "INTEGER DEFAULT 0"}
+            {"sessions": "INTEGER DEFAULT 0"},
+            {"loaded_wta" : "INTEGER DEFAULT 0"},
+            {"activated_wta" : "INTEGER DEFAULT 0"},
+            {"authentications_wta": "INTEGER DEFAULT 0"},
+            {"unique_visitors_wta": "INTEGER DEFAULT 0"},
+            {"activations_wta": "INTEGER DEFAULT 0"},
+            {"sessions_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_structure_months",
@@ -653,7 +696,13 @@
             {"authentications": "INTEGER DEFAULT 0"},
             {"unique_visitors": "INTEGER DEFAULT 0"},
             {"activations": "INTEGER DEFAULT 0"},
-            {"sessions": "INTEGER DEFAULT 0"}
+            {"sessions": "INTEGER DEFAULT 0"},
+            {"loaded_wta" : "INTEGER DEFAULT 0"},
+            {"activated_wta" : "INTEGER DEFAULT 0"},
+            {"authentications_wta": "INTEGER DEFAULT 0"},
+            {"unique_visitors_wta": "INTEGER DEFAULT 0"},
+            {"activations_wta": "INTEGER DEFAULT 0"},
+            {"sessions_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.accounts_class_hours",
@@ -844,7 +893,10 @@
             {"module": "VARCHAR(64)"},
             {"access": "INTEGER DEFAULT 0"},
             {"unique_access_minute": "INTEGER DEFAULT 0"},
-            {"unique_access": "INTEGER DEFAULT 0"}
+            {"unique_access": "INTEGER DEFAULT 0"},
+            {"access_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_minute_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_structure_days",
@@ -859,7 +911,10 @@
             {"module": "VARCHAR(64)"},
             {"access": "INTEGER DEFAULT 0"},
             {"unique_access_minute": "INTEGER DEFAULT 0"},
-            {"unique_access": "INTEGER DEFAULT 0"}
+            {"unique_access": "INTEGER DEFAULT 0"},
+            {"access_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_minute_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_structure_weeks",
@@ -874,7 +929,10 @@
             {"module": "VARCHAR(64)"},
             {"access": "INTEGER DEFAULT 0"},
             {"unique_access_minute": "INTEGER DEFAULT 0"},
-            {"unique_access": "INTEGER DEFAULT 0"}
+            {"unique_access": "INTEGER DEFAULT 0"},
+            {"access_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_minute_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_structure_months",
@@ -889,7 +947,10 @@
             {"module": "VARCHAR(64)"},
             {"access": "INTEGER DEFAULT 0"},
             {"unique_access_minute": "INTEGER DEFAULT 0"},
-            {"unique_access": "INTEGER DEFAULT 0"}
+            {"unique_access": "INTEGER DEFAULT 0"},
+            {"access_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_minute_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_device_class_hours",
@@ -1071,7 +1132,10 @@
             {"module": "VARCHAR(64)"},
             {"access": "INTEGER DEFAULT 0"},
             {"unique_access_minute": "INTEGER DEFAULT 0"},
-            {"unique_access": "INTEGER DEFAULT 0"}
+            {"unique_access": "INTEGER DEFAULT 0"},
+            {"access_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_minute_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_structure_days",
@@ -1085,7 +1149,10 @@
             {"module": "VARCHAR(64)"},
             {"access": "INTEGER DEFAULT 0"},
             {"unique_access_minute": "INTEGER DEFAULT 0"},
-            {"unique_access": "INTEGER DEFAULT 0"}
+            {"unique_access": "INTEGER DEFAULT 0"},
+            {"access_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_minute_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_structure_weeks",
@@ -1099,7 +1166,10 @@
             {"module": "VARCHAR(64)"},
             {"access": "INTEGER DEFAULT 0"},
             {"unique_access_minute": "INTEGER DEFAULT 0"},
-            {"unique_access": "INTEGER DEFAULT 0"}
+            {"unique_access": "INTEGER DEFAULT 0"},
+            {"access_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_minute_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_structure_months",
@@ -1113,7 +1183,10 @@
             {"module": "VARCHAR(64)"},
             {"access": "INTEGER DEFAULT 0"},
             {"unique_access_minute": "INTEGER DEFAULT 0"},
-            {"unique_access": "INTEGER DEFAULT 0"}
+            {"unique_access": "INTEGER DEFAULT 0"},
+            {"access_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_minute_wta": "INTEGER DEFAULT 0"},
+            {"unique_access_wta": "INTEGER DEFAULT 0"}
         ]
     },{
         "table" : "stats.access_class_hours",
