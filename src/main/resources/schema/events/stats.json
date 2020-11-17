@@ -45,7 +45,8 @@
             {"ua": "VARCHAR(256)"},
             {"device_type" : "VARCHAR(32)"},
             {"platform_id" : "VARCHAR(36)"},
-            {"user_id" : "VARCHAR(36)"}
+            {"user_id" : "VARCHAR(36)"},
+            {"\"cas-type\"" : "VARCHAR(256)"}
         ]
     },{
         "table" : "events.activation_events" ,
