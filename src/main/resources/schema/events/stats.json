@@ -132,6 +132,52 @@
             {"user_id" : "VARCHAR(36)"}
         ]
     },{
+        "table" : "events.edit_start_events",
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"resource_type" : "VARCHAR(64)"},
+            {"resource_id" : "VARCHAR(36)"},
+            {"resource_uri" : "TEXT"}
+        ]
+    },{
+        "table" : "events.edit_stop_events",
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"resource_type" : "VARCHAR(64)"},
+            {"resource_id" : "VARCHAR(36)"},
+            {"resource_uri" : "TEXT"},
+            {"duration" : "INTEGER"}
+        ]
+    },{
+        "table" : "events.edit_finish_events",
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"resource_type" : "VARCHAR(64)"},
+            {"resource_id" : "VARCHAR(36)"},
+            {"resource_uri" : "TEXT"},
+            {"duration" : "INTEGER"},
+            {"status" : "VARCHAR(10)"},
+            {"status_code" : "VARCHAR(10)"}
+        ]
+    },{
         "table" : "repository.platforms",
         "attributes" : [
             {"id" : "VARCHAR(36) PRIMARY KEY"},
