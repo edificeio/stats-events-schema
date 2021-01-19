@@ -178,6 +178,78 @@
             {"status_code" : "VARCHAR(10)"}
         ]
     },{
+        "table" : "events.video_capture_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"video_id" : "VARCHAR(64)"},
+            {"duration" : "BIGINT"},
+            {"weight" : "BIGINT"}
+        ]
+    },{
+        "table" : "events.video_encode_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"video_id" : "VARCHAR(64)"},
+            {"duration" : "BIGINT"},
+            {"weight" : "BIGINT"},
+            {"resolution" : "VARCHAR(15)"},
+            {"result" : "VARCHAR(10)"}
+        ]
+    },{
+        "table" : "events.video_embed_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"video_id" : "VARCHAR(64)"},
+            {"duration" : "BIGINT"},
+            {"weight" : "BIGINT"}
+        ]
+    },{
+        "table" : "events.video_read_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"video_id" : "VARCHAR(64)"},
+            {"session" : "VARCHAR(64)"},
+            {"duration" : "BIGINT"},
+            {"source" : "VARCHAR(10)"}
+        ]
+    },{
+        "table" : "events.video_view_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"video_id" : "VARCHAR(64)"},
+            {"source" : "VARCHAR(10)"}
+        ]
+    },{
         "table" : "repository.platforms",
         "attributes" : [
             {"id" : "VARCHAR(36) PRIMARY KEY"},
