@@ -1764,6 +1764,1270 @@
             {"creations": "INTEGER DEFAULT 0"}
         ]
     },{
+        "table" : "stats.video_captures_device_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"captured_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"captured_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"captured_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"captured_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_device_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"captured_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"captured_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"captured_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"captured_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_captures_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"captured" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"embedded_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"embedded_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"embedded_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"embedded_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_device_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"embedded_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"embedded_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"embedded_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"},
+            {"embedded_wta" : "INTEGER DEFAULT 0"},
+            {"durations_wta" : "BIGINT DEFAULT 0"},
+            {"weights_wta": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_embeds_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"embedded" : "INTEGER DEFAULT 0"},
+            {"durations" : "BIGINT DEFAULT 0"},
+            {"weights": "BIGINT DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"},
+            {"read_wta" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"},
+            {"read_wta" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"},
+            {"read_wta" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"},
+            {"read_wta" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_device_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_platform_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_platform_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_platform_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_platform_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_tenant_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_tenant_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_tenant_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_tenant_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"tenant_id" : "VARCHAR(36) REFERENCES repository.tenants(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_structure_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"},
+            {"read_wta" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_structure_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"},
+            {"read_wta" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_structure_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"},
+            {"read_wta" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_structure_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"structure_id" : "VARCHAR(36) REFERENCES repository.structures(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"},
+            {"read_wta" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_class_hours",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_class_days",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_class_weeks",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
+        "table" : "stats.video_reads_class_months",
+        "attributes" : [
+            {"id" : "VARCHAR(64) PRIMARY KEY"},
+            {"platform_id" : "VARCHAR(36) REFERENCES repository.platforms(id)"},
+            {"date" : "TIMESTAMP NOT NULL"},
+            {"class_id" : "VARCHAR(36) REFERENCES repository.classes(id)"},
+            {"profile" : "VARCHAR(9)"},
+            {"module": "VARCHAR(64)"},
+            {"read" : "INTEGER DEFAULT 0"}
+        ]
+    },{
         "table" : "external.rep",
         "attributes" : [
             {"uai" : "VARCHAR(8) PRIMARY KEY"},
