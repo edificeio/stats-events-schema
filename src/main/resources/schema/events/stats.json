@@ -177,6 +177,20 @@
             {"status" : "VARCHAR(10)"},
             {"status_code" : "VARCHAR(10)"}
         ]
+    }, {
+        "table" : "events.neo4j_change_events",
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"state" : "VARCHAR(20)"},
+            {"url" : "VARCHAR(256)"},
+            {"starting" : "BOOLEAN"},
+            {"node_type" : "VARCHAR(16)"},
+            {"hostname" : "VARCHAR(256)"}
+        ]
     },{
         "table" : "events.video_capture_events" ,
         "attributes" : [
