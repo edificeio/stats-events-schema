@@ -9,7 +9,8 @@
             {"device_type" : "VARCHAR(32)"},
             {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"},
-            {"ip": "inet"}
+            {"ip": "inet"},
+            {"useradmin" : "VARCHAR(11)"}
         ]
     },{
         "table" : "events.access_events",
@@ -1881,6 +1882,21 @@
             {"business_name" : "VARCHAR(64)"},
             {"module" : "VARCHAR(64)"},
             {"resource_type" : "VARCHAR(64)"}
+        ]
+    },{
+        "table" : "utils.ua_device",
+        "attributes" : [
+            {"ua" : "VARCHAR(512) NOT NULL"},
+            {"device" : "VARCHAR(32)"},
+            {"device_brand" : "VARCHAR(32)"},
+            {"device_model" : "VARCHAR(32)"},
+            {"os_name" : "VARCHAR(32)"},
+            {"os_family" : "VARCHAR(32)"},
+            {"os_platform" : "VARCHAR(32)"},
+            {"os_version" : "VARCHAR(32)"},
+            {"client_type" : "VARCHAR(32)"},
+            {"client_name" : "VARCHAR(32)"},
+            {"client_version" : "VARCHAR(32)"}
         ]
     }
 ]
