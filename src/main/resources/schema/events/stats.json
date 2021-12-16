@@ -223,6 +223,22 @@
             {"ip": "inet"}
         ]
     },{
+        "table" : "events.video_save_events" ,
+        "attributes" : [
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"video_id" : "VARCHAR(64)"},
+            {"duration" : "BIGINT"},
+            {"weight" : "BIGINT"},
+            {"source" : "VARCHAR(10)"},
+            {"ip": "inet"}
+        ]
+    },{
         "table" : "events.video_encode_events" ,
         "attributes" : [
             {"profile" : "VARCHAR(9)"},
