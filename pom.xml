@@ -6,7 +6,7 @@
 
   <groupId>com.opendigitaleducation</groupId>
   <artifactId>stats-events-schema</artifactId>
-  <version>1.3.0</version>
+  <version>1.4-SNAPSHOT</version>
 
   <name>stats-events-schema</name>
   <description>A simple stats-events-schema.</description>
