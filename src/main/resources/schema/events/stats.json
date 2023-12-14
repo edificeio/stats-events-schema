@@ -101,7 +101,8 @@
             {"platform_id" : "VARCHAR(36)"},
             {"user_id" : "VARCHAR(36)"},
             {"ip": "inet"},
-            {"sms_id": "VARCHAR(34)"}
+            {"sms_id": "VARCHAR(34)"},
+            {"phone": "VARCHAR(16)"}
         ]
     },{
         "table" : "events.creation_events" ,
