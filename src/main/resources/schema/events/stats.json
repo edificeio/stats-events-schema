@@ -1916,5 +1916,25 @@
             {"client_name" : "VARCHAR(32)"},
             {"client_version" : "VARCHAR(32)"}
         ]
+    },{
+        "table" : "events.editor_content_events" ,
+        "attributes" : [ 
+            {"profile" : "VARCHAR(9)"},
+            {"module" : "VARCHAR(64)"},
+            {"event_type" : "VARCHAR(16)"},
+            {"ua": "VARCHAR(256)"},
+            {"device_type" : "VARCHAR(32)"},
+            {"platform_id" : "VARCHAR(36)"},
+            {"user_id" : "VARCHAR(36)"},
+            {"ip": "inet"},
+            {"nb_images": "INTEGER"},
+            {"nb_sounds": "INTEGER"},
+            {"nb_videos": "INTEGER"},
+            {"nb_embedded": "INTEGER"},
+            {"nb_formulae": "INTEGER"},
+            {"nb_attachments": "INTEGER"},
+            {"nb_external_links": "INTEGER"},
+            {"nb_internal_links": "INTEGER"}
+        ]
     }
 ]
